@@ -1,9 +1,17 @@
 <?php 
-session_start();
- if (($_POST["name"] === $_SESSION["name"]) && ($_POST["pass"] === $_SESSION["pass"])){
-    $_SESSION["is_logged"] = true;
-    header( "Location: /lorem" );
-    die();
- } else echo "wrong pass or name <a href = /login>back to the login</a>"
+
+$usrArray = json_decode(file_get_contents("users.txt"), true);
+$username = $_POST["name"]; 
+$password = substr(crypt($_POST["pass"], '$6$HelloGeneralKeno$'), 20);
+if (array_key_exists($username,$usrArray)){
+   if ($usrArray[$username] === $password) {
+      $_SESSION["is_logged"] = true;
+      header( "Location: /lorem" );
+   } else echo "wrong username or password, try again";
+
+} else echo "wrong username or password, try again";
+
+
+
 
 ?>

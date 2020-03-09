@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if ($_SESSION["is_logged"]){
-   header( "Location: /lorem.php" );
+   header( "Location: /lorem" );
    die();
 }
 ?>
@@ -11,12 +11,12 @@ if ($_SESSION["is_logged"]){
 </head>
 <body>
 
-<form action= "check.php" method="post" >
+<form action= "check" method="post" >
 Name: <input type="text" name="name"><br>
-Password: <input type="text" name="pass"><br>
+Password: <input type="password" name="pass"><br>
 <input type="submit">
 </form>
-<p>Not yet an user?</p> <a href = /register.php>click here!</a>
+<p>Not yet an user?</p> <a href = /register>click here!</a>
 
 
 </body>

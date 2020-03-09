@@ -1,7 +1,7 @@
 <?php 
-session_start();
-$_SESSION["is_logged"] = false;
-header( "Location: /login.php" );
+session_unset();
+session_destroy();
+header( "Location: /login" );
 die();
 
 ?>

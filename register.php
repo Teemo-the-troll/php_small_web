@@ -8,20 +8,15 @@ session_start();
 <body> 
 
 
-<form method="post">
+<form action="saveUser" method="post">
     Name: <input type="text" name="name"><br>
-    Password: <input type="text" name="pass"><br>
+    Password: <input type="password" name="pass"><br>
     <input type="submit">
 </form>
 <p>Already an user?</p> <a href = /login> click here!</a>
 
 
-<?php
 
-$_SESSION["name"] = $_POST["name"]; 
-$_SESSION["pass"] = $_POST["pass"];
- 
-?>
 
 
 </body>

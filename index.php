@@ -13,14 +13,16 @@ $validURLs = array(
     "logout" => "logout.php",
     "check" => "check.php",
     "lorem" => "lorem.php",
-    "index" => "index.php"
+    "index" => "index.php",
+    "saveUser" => "saveUser.php"
 );
-echo "Toto je url:" . $url;
+
 $url = substr($url, 1);
 
-if (array_key_exists($url,$validURLs)) {
+
+if (array_key_exists($url, $validURLs)) {
     require $validURLs[$url];
-} else
+} else 
     require 'noPageFound.php';
 
 ?>
