@@ -13,7 +13,9 @@ session_start();
     Password: <input type="text" name="pass"><br>
     <input type="submit">
 </form>
-<p>Already an user?</p> <a href = /login.php> click here!</a>
+<p>Already an user?</p> <a href = /login> click here!</a>
+
+
 <?php
 
 $_SESSION["name"] = $_POST["name"]; 
