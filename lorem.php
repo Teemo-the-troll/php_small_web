@@ -1,6 +1,6 @@
 <?php 
 if ($_SESSION["is_logged"] != true){
-    require 'login.php';
+    header( "Location: /login" );
     die();
 }
 ?>

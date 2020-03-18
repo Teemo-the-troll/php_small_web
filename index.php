@@ -14,19 +14,11 @@ $validURLs = array(
 $url = substr($url, 1);
 if ($url === "") {
     require 'login.php';
+    die();
 } else if (array_key_exists($url, $validURLs)) {
     require $validURLs[$url];  
+    die();
 } else 
     require 'noPageFound.php';
+    die();
 ?>
-<html>
-
-<head>
-</head>
-
-<body>
-
-
-</body>
-
-</html>

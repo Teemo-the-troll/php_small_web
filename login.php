@@ -1,7 +1,8 @@
 <?php 
 session_start();
 if ($_SESSION["is_logged"] === true){
-  require 'lorem.php';
+   header( "Location: /lorem.php" );
+  die();
 }
 ?>
 
@@ -26,7 +27,7 @@ if (array_key_exists($username,$usrArray)){
    if ($usrArray[$username] === $password) {
       $_SESSION["is_logged"] = true;
       $_SESSION["userlogged"] = $username;
-      require 'lorem.php';
+      header( "Location: /lorem" );
    } else echo "wrong username or password, try again";
 
 } else echo "wrong username or password, try again";

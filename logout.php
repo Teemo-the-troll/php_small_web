@@ -4,7 +4,7 @@ $_SESSION["is_logged"] = false;
 echo $_SESSION["is_logged"];  
 session_unset();
 echo session_destroy();
-require 'login.php';
+header( "Location: /login" );
 die();
 ?>
 
