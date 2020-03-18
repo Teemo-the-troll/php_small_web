@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION["is_logged"]){
+if ($_SESSION["is_logged"] === true or $_SESSION["is_logged"] === null){
    header( "Location: /lorem" );
    die();
 }

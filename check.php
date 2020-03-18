@@ -10,8 +10,3 @@ if (array_key_exists($username,$usrArray)){
    } else echo "wrong username or password, try again";
 
 } else echo "wrong username or password, try again";
-
-
-
-
-?>

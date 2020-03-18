@@ -9,7 +9,4 @@ if (!array_key_exists($username,$usrArray)) {
     fwrite($users, json_encode(array_merge($usrArray, $user)));
     fclose($users);
 } else
-    echo "this username has already been taken, choose another username"
-
-
-?>
+    echo "this username has already been taken, choose another username";

@@ -1,5 +1,4 @@
 <?php 
-session_start();
 if ($_SESSION["is_logged"] != true){
     header( "Location: /login" );
     die();
@@ -14,6 +13,6 @@ itaque nulla iure accusantium perspiciatis, nemo iusto iste veritatis omnis nequ
 Adipisci tempora voluptatibus labore qui?
 </pre>
 
-<a href = /logout>logout</a>
+<a href = /logout.php>logout</a>
 </body>
 </html>

@@ -1,9 +1,11 @@
 <?php 
+echo $_SESSION["is_logged"];
+$_SESSION["is_logged"] = false;
+echo $_SESSION["is_logged"];  
 session_unset();
-session_destroy();
-header( "Location: /login" );
+echo session_destroy();
+// header( "Location: /login" );
 die();
-
 ?>
 
 
