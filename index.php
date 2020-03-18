@@ -1,13 +1,6 @@
 <?php
-
-//session_start();
-echo $_SESSION["is_logged"];
-if (($_SESSION["is_logged"] === true)) {
-    require 'lorem.php';
-} else {
-    $url =  $_SERVER['REQUEST_URI'];
-}
-
+session_start();
+$url =  $_SERVER['REQUEST_URI'];
 $validURLs = array(
     "login" => "login.php",
     "register" => "register.php",
@@ -19,12 +12,11 @@ $validURLs = array(
 );
 
 $url = substr($url, 1);
-if ($url === "index") {
-    header( "Location: /login" );
+if ($url === "") {
+    require 'login.php';
 } else if (array_key_exists($url, $validURLs)) {
-    header( "Location: /" . $validURLs[$url] ); 
+    require $validURLs[$url];  
 } else 
-    //header( "Location: /noPageFound.php" ); 
     require 'noPageFound.php';
 ?>
 <html>
