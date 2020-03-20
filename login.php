@@ -1,8 +1,11 @@
 <?php 
-session_start();
+declare(strict_types = 1);
+require_once "User.php";
+require_once 'userManager.php';
 if ($_SESSION["is_logged"] === true){
-   header( "Location: /lorem.php" );
-  die();
+   header( "Location: /lorem" );
+   echo $_SESSION["is_logged"] ? "true" : "false" ; 
+   die();
 }
 ?>
 
@@ -19,18 +22,10 @@ Password: <input type="password" name="pass"><br>
 <p>Not yet an user?</p> <a href = /register>click here!</a>
 
 <?php 
+if (!is_null($_POST["name"]) && !is_null($_POST["pass"]) ) {
+   loginUser($_POST["name"], $_POST["pass"]);
+}
 
-$usrArray = json_decode(file_get_contents("users.txt"), true);
-$username = $_POST["name"]; 
-$password = substr(crypt($_POST["pass"], '$6$HelloGeneralKeno$'), 20);
-if (array_key_exists($username,$usrArray)){
-   if ($usrArray[$username] === $password) {
-      $_SESSION["is_logged"] = true;
-      $_SESSION["userlogged"] = $username;
-      header( "Location: /lorem" );
-   } else echo "wrong username or password, try again";
-
-} else echo "wrong username or password, try again";
 ?>
 
 

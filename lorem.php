@@ -7,7 +7,7 @@ if ($_SESSION["is_logged"] != true){
 
 <html>
 <body>
-    <p>Hello, <?php $_SESSION["userlogged"]?></p>
+    <p>Hello, <?php echo $_SESSION["userlogged"]?></p>
 <pre>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consequatur,
 itaque nulla iure accusantium perspiciatis, nemo iusto iste veritatis omnis neque rem aliquam sit fugiat.
