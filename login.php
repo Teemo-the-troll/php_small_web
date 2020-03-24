@@ -23,7 +23,7 @@ Password: <input type="password" name="pass"><br>
 
 <?php 
 if (!is_null($_POST["name"]) && !is_null($_POST["pass"]) ) {
-   loginUser($_POST["name"], $_POST["pass"]);
+   (new UserManager)->loginUser($_POST["name"], $_POST["pass"]);
 }
 
 ?>

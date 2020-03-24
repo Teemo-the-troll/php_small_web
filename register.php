@@ -17,7 +17,8 @@ include_once('userManager.php');
 <?php
     
     if (!is_null($_POST["name"]) && !is_null($_POST["pass"])) {
-        saveUser($_POST["pass"], $_POST["name"]);
+        $usr = new User($_POST["pass"], $_POST["name"]);
+        ( new UserManager) -> saveUser($usr);
         } 
         ?>
     </body> 
